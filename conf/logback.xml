@@ -1,0 +1,24 @@
+<configuration>
+  <!-- A conversion rule to turns the console output into a coloured one -->
+  <conversionRule
+    conversionWord="coloredLevel"
+    converterClass="play.api.Logger$ColoredLevel" />
+
+    <!-- The logging to standard output -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+      <encoder>
+        <pattern> <!-- The pattern of the messages to log -->
+          %coloredLevel - %logger - %message%n%xException
+        </pattern>
+      </encoder>
+    </appender>
+
+    <!-- The level of each logger -->
+    <logger name="play" level="INFO" />
+    <logger name="application" level="DEBUG" />
+
+    <!-- Using the defined appender to be used for logging -->
+    <root level="error">
+      <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
