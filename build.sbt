@@ -10,5 +10,6 @@ lazy val `simple-vocabulary-teacher` = (project in file(".")).
 routesGenerator := InjectedRoutesGenerator
 
 routesImport += "binders.PathBinders._"
+routesImport += "binders.QueryBinders._"
 
 com.typesafe.sbt.SbtScalariform.scalariformSettings                                        
